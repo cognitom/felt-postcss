@@ -20,6 +20,7 @@
   "dependencies": {
     "autoprefixer": "^6.3.5",
     "co": "^4.6.0",
+    "fs-promise": "^0.5.0",
     "postcss": "^5.0.19",
     "postcss-import": "^8.0.2"
   },
@@ -29,7 +30,7 @@
   },
   "scripts": {
     "test": "npm run eslint && npm run ava",
-    "eslint": "eslint index.js lib/*.js",
-    "ava": "ava test/spec.js"
+    "eslint": "eslint index.js",
+    "ava": "ava spec.js"
   }
 }

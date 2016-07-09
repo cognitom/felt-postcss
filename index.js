@@ -1,6 +1,8 @@
 'use strict'
 const
   co = require('co'),
+  fsp = require('fs-promise'),
+  path = require('path'),
   postcss = require('postcss')
 
 /** default config file name */
@@ -13,13 +15,13 @@ module.exports = function(opts) {
         root = process.cwd(),
         configFile = path.join(root, opts || defaultConfigFileName)
       opts = require(configFile)
-    } catch {
+    } catch(e) {
       opts = require(path.join(__dirname, defaultConfigFileName))
     }
   }
   return co.wrap(function* (from, to){
-    const css = await fsp.readFile(from, 'utf8')
-    await postcss(opts).process(css, { from, to })
+    const css = yield fsp.readFile(from, 'utf8')
+    yield postcss(opts).process(css, { from, to })
 
     // TODO: return dependencies
   })
