@@ -1,8 +1,7 @@
 {
   "name": "felt-postcss",
   "version": "0.0.1",
-  "description": "",
-  "private": true,
+  "description": "PostCSS plugin for Felt",
   "main": "index.js",
   "homepage": "https://github.com/cognitom/felt-postcss",
   "repository": {
