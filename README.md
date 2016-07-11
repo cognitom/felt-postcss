@@ -14,14 +14,24 @@ $ npm install felt-postcss
 const
   express = require('express'),
   felt = require('felt'),
-  postcss = require('felt-postcss')
+  postcss = require('felt-postcss'),
+  postcssImport = require('postcss-import'),
+  autoprefixer = require('autoprefixer')
 
 const app = express()
 
 app.use(felt({
   src: 'public'
-  compilers: {
-    '**/*.css': postcss('postcss.config.js')
+  handlers: {
+    '.css': postcss({
+      plugins: [
+        postcssImport(),
+        autoprefixer()
+      ],
+      options: {
+        map: { inline: false }
+      }
+    })
   }
 }))
 app.use(express.static('public'))

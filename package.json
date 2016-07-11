@@ -1,6 +1,6 @@
 {
   "name": "felt-postcss",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "PostCSS plugin for Felt",
   "main": "index.js",
   "homepage": "https://github.com/cognitom/felt-postcss",
@@ -17,11 +17,9 @@
     "postcss-runner"
   ],
   "dependencies": {
-    "autoprefixer": "^6.3.5",
     "co": "^4.6.0",
     "fs-promise": "^0.5.0",
     "postcss": "^5.0.19",
-    "postcss-import": "^8.0.2"
   },
   "devDependencies": {
     "ava": "^0.15.2",

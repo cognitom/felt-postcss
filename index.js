@@ -16,7 +16,7 @@ module.exports = function(config) {
         configFile = path.join(root, config || defaultConfigFileName)
       config = require(configFile)
     } catch(e) {
-      config = require(path.join(__dirname, defaultConfigFileName))
+      throw new Error('No config file for felt-postcss')
     }
   }
   return co.wrap(function* (from, to){
@@ -28,7 +28,5 @@ module.exports = function(config) {
     yield fsp.writeFile(to, result.css)
     if (result.map)
       yield fsp.writeFile(`${ to }.map`, result.map)
-
-    // TODO: return dependencies
   })
 }
