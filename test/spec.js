@@ -18,7 +18,7 @@ describe('felt-rollup', () => {
     server = yield felt(opts)
   }))
 
-  it('bundles scripts', co.wrap(function* () {
+  it('transpiles styles', co.wrap(function* () {
     const
       url = `http://localhost:${ port }/style.css`,
       actual = yield request(url),
