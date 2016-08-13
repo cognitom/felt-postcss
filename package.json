@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "PostCSS plugin for Felt",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "homepage": "https://github.com/cognitom/felt-postcss",
   "repository": {
     "type": "git",
@@ -22,12 +25,16 @@
     "postcss": "^5.0.19"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
-    "eslint": "^3.0.1"
+    "eslint": "^3.0.1",
+    "felt": "^0.2.2",
+    "mocha": "^3.0.2",
+    "postcss-cssnext": "^2.7.0",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.1"
   },
   "scripts": {
-    "test": "npm run eslint && npm run ava",
+    "test": "npm run eslint && npm run mocha",
     "eslint": "eslint index.js",
-    "ava": "ava spec.js"
+    "mocha": "mocha test/spec.js"
   }
 }
